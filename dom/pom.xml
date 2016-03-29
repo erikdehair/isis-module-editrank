@@ -214,12 +214,10 @@ Copyright 2014~2015 Dan Haywood
         <dependency>
             <groupId>org.apache.isis.core</groupId>
             <artifactId>isis-core-applib</artifactId>
-            <version>${isis.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.isis.core</groupId>
             <artifactId>isis-core-unittestsupport</artifactId>
-            <version>${isis.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

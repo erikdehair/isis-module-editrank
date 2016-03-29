@@ -20,7 +20,7 @@ language governing permissions and limitations under the License.
     <parent>
         <groupId>org.isisaddons.module.editrank</groupId>
         <artifactId>isis-module-editrank</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.11.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>isis-module-editrank-webapp</artifactId>
@@ -251,6 +251,13 @@ language governing permissions and limitations under the License.
             </exclusion>
           </exclusions>
         </dependency>
+        
+        
+		<dependency>
+			<groupId>com.googlecode.wicket-jquery-ui</groupId>
+			<artifactId>wicket-jquery-ui</artifactId>
+			<version>6.21.0</version>
+		</dependency>
 
     </dependencies>
 

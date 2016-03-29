@@ -19,7 +19,7 @@ language governing permissions and limitations under the License.
 
     <groupId>org.isisaddons.module.editrank</groupId>
     <artifactId>isis-module-editrank</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.11.0-SNAPSHOT</version>
 
     <name>Isis Addons EditRank Module</name>
 
@@ -30,7 +30,7 @@ language governing permissions and limitations under the License.
     </prerequisites>
 
     <properties>
-        <isis.version>1.10.0</isis.version>
+        <isis.version>1.11.0</isis.version>
 
         <isis-module-editrank.version>1.11.0-SNAPSHOT</isis-module-editrank.version>
         <assertj-core.version>2.0.0</assertj-core.version>
@@ -339,22 +339,22 @@ language governing permissions and limitations under the License.
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>isis-module-editrank-fixture</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${isis-module-editrank.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>isis-module-editrank-app</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${isis-module-editrank.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>isis-module-editrank-integtests</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${isis-module-editrank.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>isis-module-editrank-webapp</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${isis-module-editrank.version}</version>
             </dependency>
 
             <dependency>
