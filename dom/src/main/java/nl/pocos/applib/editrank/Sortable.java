@@ -22,4 +22,10 @@ public interface Sortable {
 
 	@Programmatic
 	void updateRank(int newRank);
+	
+	@Programmatic
+	void increaseIndentation();
+	
+	@Programmatic
+	void decreaseIndentation();
 }

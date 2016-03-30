@@ -19,7 +19,7 @@ language governing permissions and limitations under the License.
 
     <groupId>org.isisaddons.module.editrank</groupId>
     <artifactId>isis-module-editrank</artifactId>
-    <version>1.11.0-SNAPSHOT</version>
+    <version>1.11.1-SNAPSHOT</version>
 
     <name>Isis Addons EditRank Module</name>
 
@@ -32,7 +32,7 @@ language governing permissions and limitations under the License.
     <properties>
         <isis.version>1.11.0</isis.version>
 
-        <isis-module-editrank.version>1.11.0-SNAPSHOT</isis-module-editrank.version>
+        <isis-module-editrank.version>1.11.1-SNAPSHOT</isis-module-editrank.version>
         <assertj-core.version>2.0.0</assertj-core.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -43,7 +43,8 @@ language governing permissions and limitations under the License.
         <connection>scm:git:git@github.com:erikdehair/isis-module-editrank.git</connection>
         <developerConnection>scm:git:git@github.com:erikdehair/isis-module-editrank.git</developerConnection>
         <url>git@github.com:erikdehair/isis-module-editrank.git</url>
-  	</scm>
+  	  <tag>HEAD</tag>
+  </scm>
     <developers>
         <developer>
             <id>erikdehair</id>
@@ -275,7 +276,7 @@ language governing permissions and limitations under the License.
                             <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
                                 <licenseFamilyCategory>AL2</licenseFamilyCategory>
                                 <licenseFamilyName>Apache License 2.0</licenseFamilyName>
-                                <notes/>
+                                <notes />
                                 <patterns>
                                     <pattern>Licensed to the Apache Software Foundation (ASF) under one</pattern>
                                 </patterns>
@@ -283,7 +284,7 @@ language governing permissions and limitations under the License.
                             <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
                                 <licenseFamilyCategory>JQRY</licenseFamilyCategory>
                                 <licenseFamilyName>MIT</licenseFamilyName>
-                                <notes/>
+                                <notes />
                                 <patterns>
                                     <pattern>Dual licensed under the MIT or GPL Version 2 licenses.</pattern>
                                 </patterns>
@@ -291,7 +292,7 @@ language governing permissions and limitations under the License.
                             <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
                                 <licenseFamilyCategory>JMOCK</licenseFamilyCategory>
                                 <licenseFamilyName>JMock</licenseFamilyName>
-                                <notes/>
+                                <notes />
                                 <patterns>
                                     <pattern>Copyright (c) 2000-2007, jMock.org</pattern>
                                 </patterns>
@@ -299,7 +300,7 @@ language governing permissions and limitations under the License.
                             <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
                                 <licenseFamilyCategory>DOCBK</licenseFamilyCategory>
                                 <licenseFamilyName>DocBook 4.5</licenseFamilyName>
-                                <notes/>
+                                <notes />
                                 <patterns>
                                     <pattern>Permission to copy in any form is granted for use</pattern>
                                     <pattern>Permission to use, copy, modify and distribute the DocBook DTD</pattern>
@@ -315,7 +316,7 @@ language governing permissions and limitations under the License.
                             <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
                                 <licenseFamilyCategory>W3C</licenseFamilyCategory>
                                 <licenseFamilyName>XHTML</licenseFamilyName>
-                                <notes/>
+                                <notes />
                                 <patterns>
                                     <pattern>Copyright (c) 1998-2002 W3C (MIT, INRIA, Keio),</pattern>
                                 </patterns>

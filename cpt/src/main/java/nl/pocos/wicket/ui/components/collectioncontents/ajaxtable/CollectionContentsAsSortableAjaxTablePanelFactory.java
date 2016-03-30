@@ -53,7 +53,7 @@ public class CollectionContentsAsSortableAjaxTablePanelFactory
 	@Override
 	public IModel<String> getTitleLabel()
 	{
-		return new ResourceModel("CollectionContentsAsSortableAjaxTablePanelFactory.Table", "Sortable");
+		return new ResourceModel("CollectionContentsAsSortableAjaxTablePanelFactory.Table", "Table");
 	}
 
 	@Override
