@@ -2,3 +2,5 @@
 /target-ide/
 /target/
 /.settings/
+/.classpath
+/.project
