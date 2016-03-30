@@ -26,7 +26,6 @@ language governing permissions and limitations under the License.
     <artifactId>isis-module-editrank-webapp</artifactId>
     <name>Isis Addons EditRank Module Webapp</name>
 
-    <packaging>war</packaging>
 
     <properties>
         <siteBaseDir>..</siteBaseDir>
@@ -251,14 +250,6 @@ language governing permissions and limitations under the License.
             </exclusion>
           </exclusions>
         </dependency>
-        
-        
-		<dependency>
-			<groupId>com.googlecode.wicket-jquery-ui</groupId>
-			<artifactId>wicket-jquery-ui</artifactId>
-			<version>6.21.0</version>
-		</dependency>
-
     </dependencies>
 
     <profiles>
@@ -364,4 +355,5 @@ language governing permissions and limitations under the License.
 
 
 
+    <packaging>war</packaging>
 </project>

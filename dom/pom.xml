@@ -29,13 +29,6 @@ Copyright 2014~2015 Dan Haywood
     </description>
 
     <url>https://github.com/erikdehair/isis-module-editrank</url>
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
     <scm>
         <connection>scm:git:git@github.com:erikdehair/isis-module-editrank.git</connection>
         <developerConnection>scm:git:git@github.com:erikdehair/isis-module-editrank.git</developerConnection>
@@ -43,9 +36,9 @@ Copyright 2014~2015 Dan Haywood
     </scm>
     <developers>
         <developer>
-            <id>danhaywood</id>
-            <name>Dan Haywood</name>
-            <email>dan@haywood-associates.co.uk</email>
+            <id>erikdehair</id>
+            <name>Erik de Hair</name>
+            <email>e.dehair@pocos.nl</email>
         </developer>
     </developers>
 
@@ -183,7 +176,7 @@ Copyright 2014~2015 Dan Haywood
         </pluginManagement>
 
         <plugins>
-            <!-- http://central.sonatype.org/pages/apache-maven.html -->
+            <!-- http://central.sonatype.org/pages/apache-maven.html - ->
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -195,7 +188,16 @@ Copyright 2014~2015 Dan Haywood
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
+            -->
         </plugins>
+        
+        <!-- Make SSH wagon available.-->
+	    <extensions>
+	        <extension>
+	            <groupId>org.apache.maven.wagon</groupId>
+	            <artifactId>wagon-ssh-external</artifactId>
+	        </extension>
+	    </extensions>
     </build>
 
     <dependencyManagement>
@@ -228,13 +230,20 @@ Copyright 2014~2015 Dan Haywood
         </dependency>
     </dependencies>
 
-    <!-- http://central.sonatype.org/pages/apache-maven.html -->
+    <!-- http://central.sonatype.org/pages/apache-maven.html - ->
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+    -->
+    <distributionManagement>
+		<repository>
+            <id>tonic</id>
+            <url>scpexe://tonic.office.pocos.nl/mnt/data/mvnrepo</url>
+        </repository>
+	</distributionManagement>
 
     <profiles>
         <profile>

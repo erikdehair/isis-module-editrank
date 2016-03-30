@@ -39,7 +39,15 @@ language governing permissions and limitations under the License.
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
+    <distributionManagement>
+		<repository>
+            <id>tonic</id>
+            <url>scpexe://tonic.office.pocos.nl/mnt/data/mvnrepo</url>
+        </repository>
+	</distributionManagement>
+	
     <repositories>
+    	<!-- 
         <repository>
             <id>snapshots-repo</id>
             <url>http://repository-estatio.forge.cloudbees.com/snapshot/</url>
@@ -48,6 +56,21 @@ language governing permissions and limitations under the License.
             </releases>
             <snapshots>
                 <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        -->
+        <repository>
+            <id>tonic</id>
+            <url>scpexe://tonic.office.pocos.nl/mnt/data/mvnrepo</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
         </repository>
     </repositories>
@@ -316,6 +339,13 @@ language governing permissions and limitations under the License.
                 <artifactId>maven-surefire-report-plugin</artifactId>
             </plugin>
         </plugins>
+        <!-- Make SSH wagon available.-->
+	    <extensions>
+	        <extension>
+	            <groupId>org.apache.maven.wagon</groupId>
+	            <artifactId>wagon-ssh-external</artifactId>
+	        </extension>
+	    </extensions>
     </build>
 
     <dependencyManagement>
@@ -405,6 +435,7 @@ language governing permissions and limitations under the License.
         <module>dom</module>
         <module>fixture</module>
         <module>integtests</module>
+        <module>cpt</module>
         <module>webapp</module>
     </modules>
 
