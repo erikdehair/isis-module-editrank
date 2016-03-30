@@ -188,14 +188,14 @@
     <distributionManagement>
 		<repository>
             <id>pocosinternal</id>
-            <url>scpexe://dummy/mnt/data/mvnrepo</url>
+            <url>scpexe://${pocosInternalReposHost}/mnt/data/mvnrepo</url>
         </repository>
 	</distributionManagement>
 	
     <repositories>
     	<repository>
             <id>pocosinternal</id>
-            <url>scpexe://dummy/mnt/data/mvnrepo</url>
+            <url>scpexe://${pocosInternalReposHost}/mnt/data/mvnrepo</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>

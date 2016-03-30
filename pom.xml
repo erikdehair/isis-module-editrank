@@ -42,7 +42,7 @@ language governing permissions and limitations under the License.
     <distributionManagement>
 		<repository>
             <id>pocosinternal</id>
-            <url>scpexe://dummy/mnt/data/mvnrepo</url>
+            <url>scpexe://${pocosInternalReposHost}/mnt/data/mvnrepo</url>
         </repository>
 	</distributionManagement>
 	
@@ -61,7 +61,7 @@ language governing permissions and limitations under the License.
         -->
         <repository>
             <id>pocosinternal</id>
-            <url>scpexe://dummy/mnt/data/mvnrepo</url>
+            <url>scpexe://${pocosInternalReposHost}/mnt/data/mvnrepo</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
