@@ -240,8 +240,8 @@ Copyright 2014~2015 Dan Haywood
     -->
     <distributionManagement>
 		<repository>
-            <id>tonic</id>
-            <url>scpexe://tonic.office.pocos.nl/mnt/data/mvnrepo</url>
+            <id>pocosinteral</id>
+            <url>scpexe://dummy/mnt/data/mvnrepo</url>
         </repository>
 	</distributionManagement>
 

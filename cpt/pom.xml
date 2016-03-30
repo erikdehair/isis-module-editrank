@@ -187,15 +187,15 @@
 
     <distributionManagement>
 		<repository>
-            <id>tonic</id>
-            <url>scpexe://tonic.office.pocos.nl/mnt/data/mvnrepo</url>
+            <id>pocosinternal</id>
+            <url>scpexe://dummy/mnt/data/mvnrepo</url>
         </repository>
 	</distributionManagement>
 	
     <repositories>
     	<repository>
-            <id>tonic</id>
-            <url>scpexe://tonic.office.pocos.nl/mnt/data/mvnrepo</url>
+            <id>pocosinternal</id>
+            <url>scpexe://dummy/mnt/data/mvnrepo</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
