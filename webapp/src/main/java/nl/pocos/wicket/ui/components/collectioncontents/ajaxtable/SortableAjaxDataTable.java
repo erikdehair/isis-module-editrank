@@ -42,7 +42,7 @@ private static final long serialVersionUID = 1L;
     
     static final String UIHINT_PAGE_NUMBER = "pageNumber";
 
-    private PortalUnsortableHeadersToolbar<S> headersToolbar;
+    private UnsortableHeadersToolbar<S> headersToolbar;
 
 	public SortableAjaxDataTable(String id, List<? extends IColumn<T, S>> columns,
 			ISortableDataProvider<T, S> dataProvider)
@@ -60,7 +60,7 @@ private static final long serialVersionUID = 1L;
     }
     
     private void buildGui() {
-        headersToolbar = new PortalUnsortableHeadersToolbar<S>(this);
+        headersToolbar = new UnsortableHeadersToolbar<S>(this);
         addTopToolbar(headersToolbar);
         addBottomToolbar(new NoRecordsToolbar(this));
         this.add(JQueryWidget.newWidgetBehavior(this)); // cannot be in ctor as the markupId may be set manually afterward

@@ -19,7 +19,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.string.Strings;
 
-public class PortalUnsortableHeadersToolbar<S> extends AbstractToolbar
+public class UnsortableHeadersToolbar<S> extends AbstractToolbar
 {
 	private static final long serialVersionUID = 1L;
 
@@ -53,7 +53,7 @@ public class PortalUnsortableHeadersToolbar<S> extends AbstractToolbar
      * @param stateLocator
      *            locator for the ISortState implementation used by sortable headers
      */
-    public <T> PortalUnsortableHeadersToolbar(final DataTable<T, S> table)
+    public <T> UnsortableHeadersToolbar(final DataTable<T, S> table)
     {
         super(table);
         table.setOutputMarkupId(true);
