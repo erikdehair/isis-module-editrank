@@ -10,8 +10,8 @@
 	<name>Isis Addons EditRank Module Component</name>
 
 	<properties>
-		<compileSource>1.7</compileSource>
-		<compileTarget>1.7</compileTarget>
+		<compileSource>1.8</compileSource>
+		<compileTarget>1.8</compileTarget>
 
 		<isis.version>1.11.0</isis.version>
 

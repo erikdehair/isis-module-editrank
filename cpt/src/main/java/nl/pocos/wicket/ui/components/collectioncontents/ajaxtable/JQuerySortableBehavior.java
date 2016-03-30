@@ -1,7 +1,5 @@
 package nl.pocos.wicket.ui.components.collectioncontents.ajaxtable;
 
-import java.util.List;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.attributes.CallbackParameter;
@@ -11,7 +9,6 @@ import com.googlecode.wicket.jquery.core.JQueryEvent;
 import com.googlecode.wicket.jquery.core.Options;
 import com.googlecode.wicket.jquery.core.ajax.IJQueryAjaxAware;
 import com.googlecode.wicket.jquery.core.ajax.JQueryAjaxBehavior;
-import com.googlecode.wicket.jquery.core.utils.ListUtils;
 import com.googlecode.wicket.jquery.core.utils.RequestCycleUtils;
 
 public abstract class JQuerySortableBehavior extends JQueryBehavior
@@ -76,20 +73,6 @@ public abstract class JQuerySortableBehavior extends JQueryBehavior
 			}
 		}
 		
-		/**
-		 * Helper method to locate an item in a list by identifier.<br />
-		 * By default, uses item's hashcode as identifier.
-		 *
-		 * @param id the item id
-		 * @param list the list of items
-		 * @return the item with that identifier or {@code null} if there is no such
-		 * @see JQuerySortableBehavior#findItem(String, List)
-		 */
-		protected Object findItem(String id, List list)
-		{
-			return ListUtils.fromHash(Integer.parseInt(id), list);
-		}
-
 		// Factory //
 		protected JQueryAjaxBehavior newJQueryOnUpdateAjaxBehavior(IJQueryAjaxAware source)
 		{
