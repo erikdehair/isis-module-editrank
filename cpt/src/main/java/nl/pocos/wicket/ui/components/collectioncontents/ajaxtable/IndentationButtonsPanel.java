@@ -5,7 +5,7 @@ import org.apache.isis.viewer.wicket.ui.panels.PanelAbstract;
 import org.apache.isis.viewer.wicket.ui.util.CssClassAppender;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
+import org.apache.wicket.ajax.markup.html.AjaxLink;
 
 import nl.pocos.applib.editrank.Sortable;
 
@@ -67,9 +67,9 @@ public class IndentationButtonsPanel extends PanelAbstract<EntityModel>
 		getSortable().decreaseIndentation();
 	}
 	
-	private AjaxFallbackLink<Object> createIndentButton()
+	private AjaxLink<Object> createIndentButton()
 	{
-		AjaxFallbackLink<Object> button = new AjaxFallbackLink<Object>(INDENT_BUTTON_ID)
+		AjaxLink<Object> button = new AjaxLink<Object>(INDENT_BUTTON_ID)
 		{
 			private static final long serialVersionUID = 1L;
 
@@ -88,13 +88,12 @@ public class IndentationButtonsPanel extends PanelAbstract<EntityModel>
 	
 	@Override
 	protected void onModelChanged() {
-		super.onModelChanged();
 		buildGui();
 	}
 
-	private AjaxFallbackLink<Object> createOutdentButton()
+	private AjaxLink<Object> createOutdentButton()
 	{
-		AjaxFallbackLink<Object> button = new AjaxFallbackLink<Object>(OUTDENT_BUTTON_ID)
+		AjaxLink<Object> button = new AjaxLink<Object>(OUTDENT_BUTTON_ID)
 		{
 			private static final long serialVersionUID = 1L;
 
@@ -111,7 +110,7 @@ public class IndentationButtonsPanel extends PanelAbstract<EntityModel>
 		return button;
 	}
 	
-	private void determineEnabled(boolean enabled, AjaxFallbackLink<Object> button)
+	private void determineEnabled(boolean enabled, AjaxLink<Object> button)
 	{
 		button.setEnabled(enabled);
 		if(!enabled)
