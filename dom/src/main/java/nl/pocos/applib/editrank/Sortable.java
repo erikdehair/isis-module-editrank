@@ -23,6 +23,12 @@ public interface Sortable {
 	@Programmatic
 	void updateRank(int newRank);
 	
+	/**
+	 * Level of indentation. Indentation can be used to create a 'visible only' structure
+	 */	
+	@Programmatic
+	int getLevel();
+	
 	@Programmatic
 	void increaseIndentation();
 	

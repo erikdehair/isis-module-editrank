@@ -14,7 +14,6 @@ import org.apache.isis.core.metamodel.spec.ObjectSpecification;
 import org.apache.isis.core.metamodel.spec.feature.Contributed;
 import org.apache.isis.core.metamodel.spec.feature.ObjectAssociation;
 import org.apache.isis.viewer.wicket.model.common.OnConcurrencyExceptionHandler;
-import org.apache.isis.viewer.wicket.model.hints.UiHintPathSignificant;
 import org.apache.isis.viewer.wicket.model.isis.WicketViewerSettings;
 import org.apache.isis.viewer.wicket.model.mementos.ObjectAdapterMemento;
 import org.apache.isis.viewer.wicket.model.models.EntityCollectionModel;
@@ -36,7 +35,7 @@ import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
 public class CollectionContentsAsSortableAjaxTablePanel extends PanelAbstract<EntityCollectionModel>
-		implements CollectionCountProvider, UiHintPathSignificant
+		implements CollectionCountProvider
 {
 
 	private static final long serialVersionUID = 1L;
@@ -76,10 +75,12 @@ public class CollectionContentsAsSortableAjaxTablePanel extends PanelAbstract<En
 		}
 
 		final EntityCollectionModel model = getModel();
+		
 		addTitleColumn(columns, model.getParentObjectAdapterMemento(),
 				getSettings().getMaxTitleLengthInStandaloneTables(),
 				getSettings().getMaxTitleLengthInStandaloneTables());
 		addSortingColumn(columns);
+		addIndentationColumn(columns);
 		addPropertyColumnsIfRequired(columns);
 
 		final SortableDataProvider<ObjectAdapter, String> dataProvider = new CollectionContentsSortableDataProvider(model);
@@ -172,6 +173,11 @@ public class CollectionContentsAsSortableAjaxTablePanel extends PanelAbstract<En
 	private void addSortingColumn(final List<IColumn<ObjectAdapter, String>> columns)
 	{
 		columns.add(new SortingColumn());
+	}
+	
+	private void addIndentationColumn(final List<IColumn<ObjectAdapter, String>> columns)
+	{
+		columns.add(new IndentationColumn(this));
 	}
 
 	static Filter<ObjectAssociation> associationDoesNotReferenceParent(final ObjectSpecification parentSpec)

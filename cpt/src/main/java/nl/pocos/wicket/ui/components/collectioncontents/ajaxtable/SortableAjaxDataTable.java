@@ -8,12 +8,10 @@ import org.apache.isis.core.metamodel.adapter.ObjectAdapter;
 import org.apache.isis.core.metamodel.adapter.oid.RootOid;
 import org.apache.isis.core.metamodel.spec.ObjectSpecification;
 import org.apache.isis.core.runtime.persistence.adapter.PojoAdapter;
-import org.apache.isis.viewer.wicket.model.hints.IsisUiHintEvent;
 import org.apache.isis.viewer.wicket.model.hints.UiHintContainer;
 import org.apache.isis.viewer.wicket.model.models.EntityModel;
 import org.apache.isis.viewer.wicket.ui.util.CssClassAppender;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.event.Broadcast;
 import org.apache.wicket.extensions.markup.html.repeater.data.sort.SortOrder;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.DataTable;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
@@ -237,30 +235,28 @@ private static final long serialVersionUID = 1L;
         uiHintContainer.setHint(this, UIHINT_PAGE_NUMBER, ""+getCurrentPage());
         // don't broadcast (no AjaxRequestTarget, still configuring initial setup)
     }
+    
+	public void setPageNumberHintAndBroadcast(AjaxRequestTarget target)
+	{
+		UiHintContainer uiHintContainer = getUiHintContainer();
+		if (uiHintContainer == null)
+		{
+			return;
+		}
+		uiHintContainer.setHint(this, "pageNumber", "" + getCurrentPage());
+	}
+    
+	public void setSortOrderHintAndBroadcast(SortOrder order, String property, AjaxRequestTarget target) {
+		UiHintContainer uiHintContainer = getUiHintContainer();
+		if (uiHintContainer == null) {
+			return;
+		}
 
-    public void setPageNumberHintAndBroadcast(AjaxRequestTarget target) {
-        final UiHintContainer uiHintContainer = getUiHintContainer();
-        if(uiHintContainer == null) {
-            return;
-        } 
-        uiHintContainer.setHint(this, SortableAjaxDataTable.UIHINT_PAGE_NUMBER, ""+getCurrentPage());
-        send(getPage(), Broadcast.EXACT, new IsisUiHintEvent(uiHintContainer, target));
-    }
-
-    public void setSortOrderHintAndBroadcast(SortOrder order, String property, AjaxRequestTarget target) {
-        final UiHintContainer uiHintContainer = getUiHintContainer();
-        if(uiHintContainer == null) {
-            return;
-        }
-
-        // first clear all SortOrder hints...
-        for (SortOrder eachSortOrder : SortOrder.values()) {
-            uiHintContainer.clearHint(this, eachSortOrder.name());
-        }
-        // .. then set this one
-        uiHintContainer.setHint(this, order.name(), property);
-        send(getPage(), Broadcast.EXACT, new IsisUiHintEvent(uiHintContainer, target));
-    }
+		for (SortOrder eachSortOrder : SortOrder.values()) {
+			uiHintContainer.clearHint(this, eachSortOrder.name());
+		}
+		uiHintContainer.setHint(this, order.name(), property);
+	}
 
     private EntityModel getUiHintContainer() {
         return UiHintContainer.Util.hintContainerOf(this, EntityModel.class);

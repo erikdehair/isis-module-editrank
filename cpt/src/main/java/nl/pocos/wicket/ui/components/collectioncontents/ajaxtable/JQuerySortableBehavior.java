@@ -49,7 +49,7 @@ public abstract class JQuerySortableBehavior extends JQueryBehavior
 			options.set("items", Options.asString("> tr"));
 			options.set("appendTo", Options.asString("parent"));
 			options.set("helper", Options.asString("clone"));
-			options.set("cursor", Options.asString("move"));
+			options.set("cursor", Options.asString("row-resize"));
 			options.set("handle", Options.asString(".dragHandle"));
 			
 			Options cursor = new Options();

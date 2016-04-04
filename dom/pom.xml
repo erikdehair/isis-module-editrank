@@ -19,7 +19,7 @@ Copyright 2014~2015 Dan Haywood
 
     <groupId>org.isisaddons.module.editrank</groupId>
     <artifactId>isis-module-editrank-dom</artifactId>
-    <version>1.11.1-SNAPSHOT</version>
+    <version>1.11.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
@@ -47,7 +47,7 @@ Copyright 2014~2015 Dan Haywood
         <compileSource>1.8</compileSource>
         <compileTarget>1.8</compileTarget>
 
-        <isis.version>1.10.0</isis.version>
+        <isis.version>1.12.0</isis.version>
         <assertj-core.version>2.0.0</assertj-core.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

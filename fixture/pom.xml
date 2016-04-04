@@ -20,7 +20,7 @@ Copyright 2014~2015 Dan Haywood
     <parent>
         <groupId>org.isisaddons.module.editrank</groupId>
         <artifactId>isis-module-editrank</artifactId>
-        <version>1.11.1-SNAPSHOT</version>
+        <version>1.11.0-SNAPSHOT</version>
     </parent>
 
 	<artifactId>isis-module-editrank-fixture</artifactId>
