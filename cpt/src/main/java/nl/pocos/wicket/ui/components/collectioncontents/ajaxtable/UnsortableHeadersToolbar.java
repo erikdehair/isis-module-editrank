@@ -20,7 +20,6 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.string.Strings;
 
-import nl.pocos.wicket.ui.components.instruction.InfoPanel;
 import nl.pocos.wicket.ui.components.instruction.InstructionPanel;
 
 public class UnsortableHeadersToolbar<S> extends AbstractToolbar
