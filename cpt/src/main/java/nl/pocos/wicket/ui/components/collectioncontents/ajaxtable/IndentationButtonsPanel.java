@@ -13,7 +13,7 @@ import nl.pocos.applib.editrank.Sortable;
 
 public class IndentationButtonsPanel extends PanelAbstract<EntityModel>
 {
-	private static final int MAX_INDENTATION_LEVEL = 5;
+	private static final int MAX_INDENTATION_LEVEL = 3;
 	private static final long serialVersionUID = 1L;
 	private static final String INDENT_BUTTON_ID = "indentButton";
 	private static final String OUTDENT_BUTTON_ID = "outdentButton";
@@ -56,7 +56,7 @@ public class IndentationButtonsPanel extends PanelAbstract<EntityModel>
 	private void increaseIndentation()
 	{
 		Sortable object = getSortable();
-		if(object.getLevel() < MAX_INDENTATION_LEVEL)
+		if(object.getLevel() < MAX_INDENTATION_LEVEL - 1)
 		{
 			object.increaseIndentation();
 		}
@@ -76,13 +76,12 @@ public class IndentationButtonsPanel extends PanelAbstract<EntityModel>
 			@Override
 			public void onClick(AjaxRequestTarget target)
 			{
-				//target.addChildren(getCollectionContents().getParent(), Component.class);
 				increaseIndentation();
 				target.add(getCollectionContents());
 			}			
 		};
 		button.setOutputMarkupId(true);
-		determineEnabled(getSortable().getLevel() < MAX_INDENTATION_LEVEL, button);
+		determineEnabled(getSortable().getLevel() < MAX_INDENTATION_LEVEL - 1, button);
 		return button;
 	}
 	
@@ -100,7 +99,6 @@ public class IndentationButtonsPanel extends PanelAbstract<EntityModel>
 			@Override
 			public void onClick(AjaxRequestTarget target)
 			{
-				//target.addChildren(getCollectionContents().getParent(), Component.class);
 				decreaseIndentation();
 				target.add(getCollectionContents());
 			}

@@ -33,7 +33,7 @@ public class CollectionContentsAsSortableAjaxTablePanelFactory
 		{
 			EntityCollectionModel ecm = (EntityCollectionModel)model;
 			Class<?> clazz = ecm.getTypeOfSpecification().getCorrespondingClass();
-			advice = appliesIf(Sortable.class.isAssignableFrom(clazz));
+			advice = appliesIf(Sortable.class.isAssignableFrom(clazz) && ecm.isParented());
 			
 			return advice;
 		}

@@ -5,8 +5,12 @@
             <th wicket:id="header">
                 <div>
                     <strong wicket:id="label">[header-label]</strong>
-                </div>
+                    <div class="instructionPanel" wicket:id="instructionPanel"></div>
+				</div>
             </th>
         </wicket:container>
     </tr>
+	<wicket:fragment wicket:id="tooltip-fragment">
+		<span wicket:id="content">[content]</span>
+	</wicket:fragment>
 </wicket:panel>

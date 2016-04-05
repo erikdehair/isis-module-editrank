@@ -1,0 +1,35 @@
+/* sortable tables */
+.dragHandle {
+	cursor: row-resize;
+}
+.indented.level1 .indented-column {
+    margin-left: 8px;
+}
+.indented.level2 .indented-column {
+    margin-left: 16px;
+}
+.indented.level3 .indented-column {
+    margin-left: 24px;
+}
+.indented.level4 .indented-column {
+    margin-left: 32px;
+}
+.indented.level5 .indented-column {
+    margin-left: 40px;
+}
+.indented .indented-column::before {
+    content: '\f0da';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    float: left;
+    margin-right: 5px;
+}
+.indentButton, .outdentButton {
+	cursor: pointer;
+}
+.indentButton.disabled, .outdentButton.disabled {
+	color: lightgray;
+	cursor: not-allowed;
+}

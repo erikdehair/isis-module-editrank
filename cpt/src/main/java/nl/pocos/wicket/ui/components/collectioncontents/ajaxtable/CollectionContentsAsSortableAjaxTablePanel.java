@@ -29,7 +29,10 @@ import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortableDataProvider;
+import org.apache.wicket.markup.head.CssHeaderItem;
+import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.request.resource.CssResourceReference;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -240,4 +243,11 @@ public class CollectionContentsAsSortableAjaxTablePanel extends PanelAbstract<En
 	}
 	// endregion
 
+	@Override
+	public void renderHead(IHeaderResponse response)
+	{
+		super.renderHead(response);
+        response.render(CssHeaderItem.forReference(
+        		new CssResourceReference(CollectionContentsAsSortableAjaxTablePanel.class, "sortableajaxtable-panel.css")));
+	}
 }

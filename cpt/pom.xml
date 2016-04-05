@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>org.isisaddons.module.editrank</groupId>
 		<artifactId>isis-module-editrank</artifactId>
-		<version>1.11.0-SNAPSHOT</version>
+		<version>1.12.0</version>
 	</parent>
 	<artifactId>isis-module-editrank-cpt</artifactId>
 	<name>Isis Addons EditRank Module Component</name>

@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.isis.viewer.wicket.ui.components.collectioncontents.ajaxtable.columns.ObjectAdapterTitleColumn;
+import org.apache.isis.viewer.wicket.ui.util.Components;
 import org.apache.isis.viewer.wicket.ui.util.CssClassAppender;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
@@ -19,9 +20,14 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.string.Strings;
 
+import nl.pocos.wicket.ui.components.instruction.InfoPanel;
+import nl.pocos.wicket.ui.components.instruction.InstructionPanel;
+
 public class UnsortableHeadersToolbar<S> extends AbstractToolbar
 {
 	private static final long serialVersionUID = 1L;
+	
+	private static final String ID_INSTRUCTION_PANEL = "instructionPanel";
 
     static abstract class CssAttributeBehavior extends Behavior
     {
@@ -87,8 +93,29 @@ public class UnsortableHeadersToolbar<S> extends AbstractToolbar
                 Component label = column.getHeader("label");
                 header.add(label);
                 
+                boolean hideInstructionPanel = true;
+                
                 if(column instanceof ObjectAdapterTitleColumn) {
                     header.add(new CssClassAppender("title-column"));
+                }
+                else if(column instanceof SortingColumn)
+                {
+                	header.add(new InstructionPanel(ID_INSTRUCTION_PANEL,
+                			Model.of(getString("sorting.helpText")),
+                			UnsortableHeadersToolbar.this));
+                	hideInstructionPanel = false;
+                }
+                else if(column instanceof IndentationColumn)
+                {
+                	header.add(new InstructionPanel(ID_INSTRUCTION_PANEL,
+                			Model.of(getString("indentation.helpText")),
+                			UnsortableHeadersToolbar.this));
+                	hideInstructionPanel = false;
+                }
+                
+                if(hideInstructionPanel)
+                {
+                	Components.permanentlyHide(header, ID_INSTRUCTION_PANEL);
                 }
             }
         };

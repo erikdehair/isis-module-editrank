@@ -1,0 +1,16 @@
+.additionalInfoValueIfCompact {
+	border-bottom: dashed 1px rgb(255, 137, 0);
+	cursor: pointer;
+}
+.tooltip-arrow {
+    display: none;
+}
+.infoPanel {
+	background: url("../nl.pocos.wicket.ui.components.instruction.InfoPanel/info-icon.png") no-repeat 0px 4px;
+	background-size: 16px 16px;
+	height: 20px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 2px;
+	width: 16px;
+}
